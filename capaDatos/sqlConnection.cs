@@ -10,6 +10,6 @@ namespace capaDatos
 {
     class sqlConnection
     {
-
+        private SqlConnection Conexion = new SqlConnection("SERVER= ; DATABASE= ; INTEGRATED SECURITY=true");
     }
 }
