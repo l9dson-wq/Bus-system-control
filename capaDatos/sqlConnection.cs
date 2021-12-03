@@ -8,8 +8,22 @@ using System.Data.SqlClient;
 
 namespace capaDatos
 {
-    class sqlConnection
+    public class sqlConnection
     {
-        private SqlConnection Conexion = new SqlConnection("SERVER= ; DATABASE= ; INTEGRATED SECURITY=true");
+        private SqlConnection Conexion = new SqlConnection("SERVER=ANDELSON; DATABASE=sistemaAutobus; INTEGRATED SECURITY=true");
+
+        public SqlConnection AbrirConexion() {
+            if (Conexion.State == ConnectionState.Closed) {
+                Conexion.Open();
+            }
+            return Conexion;
+        }
+
+        public SqlConnection CerrarConexion() {
+            if (Conexion.State == ConnectionState.Closed) {
+                Conexion.Close();
+            }
+            return Conexion;
+        }
     }
 }

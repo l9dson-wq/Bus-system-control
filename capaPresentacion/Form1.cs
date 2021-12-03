@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
+using capaNegocio;
 
 namespace capaPresentacion
 {
@@ -24,6 +27,32 @@ namespace capaPresentacion
             this.Hide();
             r1.ShowDialog();
             this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //crear un objeto de capa de negocios.
+            CPlogicaInicioSesion CPL1 = new CPlogicaInicioSesion();
+
+            //Verifico que los campos no esten vacios.
+            if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0)
+            {
+                bool bandera = false;
+
+                //mando a llamar la funcion buscarUsuario alojada en la capa de datos.
+                bandera = CPL1.buscarUsuario(textBox1.Text, textBox2.Text);
+
+                if (bandera) //Si se encuentran los datos se ejecutara la siguiente parte del codigo.
+                {
+                    MessageBox.Show("Genial los datos estan correcto, puede continuar!");
+                }
+                else {
+                    MessageBox.Show("Lo sentimos pero no pudimos encontrar los datos suministrados");
+                }
+            }
+            else {
+                MessageBox.Show("Por favor introducir los datos antes de seguir");
+            }
         }
     }
 }
