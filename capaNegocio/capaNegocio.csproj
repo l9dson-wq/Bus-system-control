@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_ADMIN.cs" />
+    <Compile Include="CN_reservacion.cs" />
     <Compile Include="CPlogicaInicioSesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

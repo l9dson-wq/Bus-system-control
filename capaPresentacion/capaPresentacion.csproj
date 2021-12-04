@@ -52,6 +52,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ADMIN\InsertarAutobusesADMIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIN\InsertarAutobusesADMIN.Designer.cs">
+      <DependentUpon>InsertarAutobusesADMIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\InsertarRutasADMIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIN\InsertarRutasADMIN.Designer.cs">
+      <DependentUpon>InsertarRutasADMIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\menuPrincipalAdmin - Copia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIN\menuPrincipalAdmin - Copia.Designer.cs">
+      <DependentUpon>menuPrincipalAdmin - Copia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registro.cs">
@@ -60,8 +78,23 @@
     <Compile Include="registro.Designer.cs">
       <DependentUpon>registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="ADMIN\SUBmenuPRINCIPALadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIN\SUBmenuPRINCIPALadmin.Designer.cs">
+      <DependentUpon>SUBmenuPRINCIPALadmin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN\InsertarAutobusesADMIN.resx">
+      <DependentUpon>InsertarAutobusesADMIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN\InsertarRutasADMIN.resx">
+      <DependentUpon>InsertarRutasADMIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN\menuPrincipalAdmin - Copia.resx">
+      <DependentUpon>menuPrincipalAdmin - Copia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="registro.resx">
       <DependentUpon>registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN\SUBmenuPRINCIPALadmin.resx">
+      <DependentUpon>SUBmenuPRINCIPALadmin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,6 +129,9 @@
       <Project>{e445b620-61fb-40dc-bd56-2e29f78802cd}</Project>
       <Name>capaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="USUARIO COMUN\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

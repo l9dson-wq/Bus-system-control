@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace capaDatos
 {
-    public class CDVerificarUsuario
+    public class sqlRegistrar
     {
         private sqlConnection conexion = new sqlConnection();
 
@@ -16,10 +16,22 @@ namespace capaDatos
         SqlCommand comando = new SqlCommand();
         DataTable tabla = new DataTable();
 
-        public DataTable buscarUsuario(string nombreUsuario, string claveUsuario) {
+        //INSERTAR LOS DATOS
+        public void registrarUsuario(string nombreUsuario, string claveUsuario, string tipoUsuario)
+        {
             //TRANSACT SQL
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "SELECT * FROM usuarios where nombreUsuario = '" + nombreUsuario + "' and claveUsuario = '" + claveUsuario + "' ";
+            comando.CommandText = "INSERT INTO usuarios VALUES ('"+nombreUsuario+"', '"+claveUsuario+"','"+tipoUsuario+"') ";
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
+
+        //EL DATATABLE PARA HACER EL LLAMADO DE LOS DATOS DESDE LA BASE DE DATOS PARA LUEGO COMPARARLOS EN LA CAPA DE NEGOCIO.
+        public DataTable buscarUsuarioRegistro(string nombreUsuario)
+        {
+            //TRANSACT SQL
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "SELECT * FROM usuarios where nombreUsuario = '" + nombreUsuario + "' ";
             comando.CommandType = CommandType.Text;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
@@ -27,17 +39,5 @@ namespace capaDatos
             return tabla;
         }
 
-        //consulta para saber el tipo de usuario
-        public DataTable tipoUsuario(String nombreUsuario) {
-            //TRANSACT SQL
-            comando.Connection = conexion.AbrirConexion();
-            //seleccionar la fila tipoUsuario para saber si es admin o es usuario comun.
-            comando.CommandText = "SELECT tipoUsuario FROM usuarios WHERE nombreUsuario = '"+nombreUsuario+"' ";
-            comando.CommandType = CommandType.Text;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla; 
-        }
     }
 }
