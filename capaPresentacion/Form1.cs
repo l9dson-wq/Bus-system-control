@@ -33,7 +33,7 @@ namespace capaPresentacion
         {
             //crear un objeto para el formulario que tiene el menu principal (admin/usuario).
             menuPrincipalAdmin MPA = new menuPrincipalAdmin();
-            
+            menuReservacion MR1 = new menuReservacion();
             SUBmenuPRINCIPALadmin SMPA = new SUBmenuPRINCIPALadmin();
 
             //crear un objeto de capa de negocios.
@@ -59,7 +59,9 @@ namespace capaPresentacion
                     }
                     else if (CPL1.datoTipoUsuario == "comun")
                     {
-                        MessageBox.Show("there's problem");
+                        this.Hide();
+                        MR1.ShowDialog();
+                        this.Show();
                     }
                     else {
                         MessageBox.Show("Lo siento pero no tienes acceso como usuario ni administrador");

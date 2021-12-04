@@ -70,6 +70,12 @@
     <Compile Include="ADMIN\menuPrincipalAdmin - Copia.Designer.cs">
       <DependentUpon>menuPrincipalAdmin - Copia.cs</DependentUpon>
     </Compile>
+    <Compile Include="USUARIO COMUN\menuReservacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USUARIO COMUN\menuReservacion.Designer.cs">
+      <DependentUpon>menuReservacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registro.cs">
@@ -111,6 +117,9 @@
     <EmbeddedResource Include="ADMIN\SUBmenuPRINCIPALadmin.resx">
       <DependentUpon>SUBmenuPRINCIPALadmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="USUARIO COMUN\menuReservacion.resx">
+      <DependentUpon>menuReservacion.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,8 +139,6 @@
       <Name>capaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="USUARIO COMUN\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

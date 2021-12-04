@@ -59,11 +59,41 @@ namespace capaDatos
             DataTable newTabla3 = new DataTable();
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SELECT * FROM reservaciones";
-            comando.CommandType = CommanTyoe.Text;
+            comando.CommandType = CommandType.Text;
             leer = comando.ExecuteReader();
             newTabla3.Load(leer);
             conexion.CerrarConexion();
             return newTabla3; 
+        }
+
+        //insertar la reservacion en su tabla correspondiente
+        public void insertarReservacion(string nombreChofer, string marcaAuto, string nombreRuta) {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "INSERT INTO reservaciones VALUES ('" + nombreChofer + "', '" + marcaAuto + "','" + nombreRuta + "') ";
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
+
+        //eliminacion de las reservacioens de sus respectivas tablas.
+        public void eliminarChofer(string nombre) {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "DELETE FROM choferes WHERE nombreChoferes = '"+nombre+"' ";
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
+
+        public void eliminarAutobus(string nombreAuto) {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "DELETE FROM autobuses WHERE marcaAutobus= '" + nombreAuto +"' ";
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
+
+        public void eliminarRuta(string nombreRuta) {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "DELETE FROM ruta WHERE nombreRura ='" + nombreRuta + "' ";
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
         }
     }
 }

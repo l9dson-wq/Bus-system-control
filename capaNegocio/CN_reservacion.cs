@@ -41,5 +41,17 @@ namespace capaNegocio
             tabla = SLR1.mostrarReservaciones();
             return tabla;
         }
+
+        //insertando las reservaciones
+        public void InsertarReservacion(string nombreChofer, string marcaAuto, string nombreRuta) {
+            SLR1.insertarReservacion(nombreChofer, marcaAuto, nombreRuta);
+        }
+
+        //codigo para eliminar su respectiva seleccion de sus respectivas tablas.
+        public void EliminarDatos(string nombre, string idAuto, string idRuta) {
+            SLR1.eliminarChofer(nombre);
+            SLR1.eliminarAutobus(idAuto);
+            SLR1.eliminarRuta(idRuta);
+        }
     }
 }
