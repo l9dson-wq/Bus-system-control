@@ -158,5 +158,17 @@
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2021-12-05 142552.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-cottonbro-7299586.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar-signo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

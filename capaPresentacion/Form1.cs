@@ -122,5 +122,30 @@ namespace capaPresentacion
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void pictureBox3_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point P = PointToScreen(e.Location);
+                this.Location = new Point(P.X - start_point.X, P.Y - start_point.Y);
+            }
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
     }
 }
