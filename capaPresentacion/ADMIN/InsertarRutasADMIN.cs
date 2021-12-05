@@ -37,6 +37,7 @@ namespace capaPresentacion
             if (txtNombre.Text.Length > 0) {
                 CA1.InsertarRuta(txtNombre.Text);
                 MessageBox.Show("Nombre de la ruta ingresado correctamente");
+                mostrarRutas();
                 LimpiarCampos();
             } else {
                 MessageBox.Show("Por favor no deje los campos vacios");
