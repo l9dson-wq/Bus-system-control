@@ -18,9 +18,14 @@ namespace capaPresentacion
         Form1 Fo1 = new Form1();
         public string estadoUsuario = null;
 
+        //objetos para mover el formulario con un diseño = none
+        Point start_point = new Point(0, 0);
+        bool drag = false;
+
         public menuPrincipalAdmin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void menuPrincipalAdmin_Load(object sender, EventArgs e)
@@ -55,6 +60,46 @@ namespace capaPresentacion
             txtApellido.Text = "";
             txtFecha.Text = "";
             txtCedula.Text = "";
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point P = PointToScreen(e.Location);
+                this.Location = new Point(P.X - start_point.X, P.Y - start_point.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

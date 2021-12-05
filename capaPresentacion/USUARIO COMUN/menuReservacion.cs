@@ -17,6 +17,7 @@ namespace capaPresentacion
         public menuReservacion()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void menuReservacion_Load(object sender, EventArgs e)
@@ -72,6 +73,21 @@ namespace capaPresentacion
             comboAutobuses.DisplayMember = "";
             comboChoferes.DisplayMember = "";
             comboRuta.DisplayMember = "";
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized; 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

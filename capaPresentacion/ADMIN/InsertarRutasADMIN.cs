@@ -15,10 +15,16 @@ namespace capaPresentacion
     {
         //CREANDO OBJETO DE LA CLASE CN_ADMIN DE LA CAPA DE NEGOCIOS
         CN_ADMIN CA1 = new CN_ADMIN();
+
+        //objetos para mover el formulario con un diseño = none
+        Point start_point = new Point(0, 0);
+        bool drag = false;
+
         public InsertarRutasADMIN()
         {
             InitializeComponent();
             mostrarRutas();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         public void mostrarRutas() {
@@ -39,6 +45,46 @@ namespace capaPresentacion
 
         public void LimpiarCampos() {
             txtNombre.Clear();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void InsertarRutasADMIN_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point P = PointToScreen(e.Location);
+                this.Location = new Point(P.X - start_point.X, P.Y - start_point.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
         }
     }
 }

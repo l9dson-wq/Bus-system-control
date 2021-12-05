@@ -15,9 +15,13 @@ namespace capaPresentacion
 {
     public partial class Form1 : Form
     {
+        Point start_point = new Point(0, 0);
+        bool drag = false;
+
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -55,13 +59,15 @@ namespace capaPresentacion
                     {
                         this.Hide();
                         SMPA.ShowDialog();
-                        this.Show();
+                        limpiarText();
+                        //this.Show();
                     }
                     else if (CPL1.datoTipoUsuario == "comun")
                     {
                         this.Hide();
                         MR1.ShowDialog();
-                        this.Show();
+                        limpiarText();
+                        //this.Show();
                     }
                     else {
                         MessageBox.Show("Lo siento pero no tienes acceso como usuario ni administrador");
@@ -79,6 +85,42 @@ namespace capaPresentacion
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point P = PointToScreen(e.Location);
+                this.Location = new Point(P.X - start_point.X, P.Y - start_point.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+
+        //funcion para limpiar los textbox
+        private void limpiarText() {
+            textBox1.Clear();
+            textBox2.Clear();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

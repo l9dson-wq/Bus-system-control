@@ -15,9 +15,14 @@ namespace capaPresentacion
     {
         CPlogicaInicioSesion CLIS1 = new CPlogicaInicioSesion();
 
+        //objetos para mover el formulario con un diseño = none
+        Point start_point = new Point(0, 0);
+        bool drag = false;
+
         public registro()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,6 +64,45 @@ namespace capaPresentacion
             txtNombre.Clear();
             txtClave.Clear();
             comboBox1.Text = ""; 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag) {
+                Point P = PointToScreen(e.Location);
+                this.Location = new Point(P.X-start_point.X,P.Y-start_point.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
