@@ -149,5 +149,14 @@
   <ItemGroup>
     <None Include="Resources\minimizar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gratisography-dancing-woman-free-stock-photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2021-12-05 142202.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2021-12-05 142552.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

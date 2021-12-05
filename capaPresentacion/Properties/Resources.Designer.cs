@@ -63,9 +63,39 @@ namespace capaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2021_12_05_142202 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2021-12-05 142202", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2021_12_05_142552 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2021-12-05 142552", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eliminar {
             get {
                 object obj = ResourceManager.GetObject("eliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gratisography_dancing_woman_free_stock_photo {
+            get {
+                object obj = ResourceManager.GetObject("gratisography-dancing-woman-free-stock-photo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
