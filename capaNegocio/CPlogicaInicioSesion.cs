@@ -18,6 +18,9 @@ namespace capaNegocio
         //variable publica para el tipo de usuario
         public string datoTipoUsuario = null;
 
+        //variable public para saber el nombre del reservador en el apartado de las reservas.
+        public string nombreReservante = null;
+
         public bool buscarUsuario(string nombreUsuario, string claveUsuario) {
             //creo un objeto de tipo table para almacenar los valores de los usuarios (nombre y clave)
             DataTable tabla = new DataTable();
@@ -32,6 +35,7 @@ namespace capaNegocio
             foreach (DataRow dato in tabla.Rows) {
                 datos= dato["nombreUsuario"].ToString();
                 datoTipoUsuario = dato["tipoUsuario"].ToString();
+                nombreReservante = dato["nombreUsuario"].ToString();
                 if (datos == nombreUsuario)
                 {
                     bandera = true;

@@ -69,27 +69,30 @@ namespace capaDatos
         //insertar la reservacion en su tabla correspondiente
         public void insertarReservacion(string nombreChofer, string marcaAuto, string nombreRuta) {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "INSERT INTO reservaciones VALUES ('" + nombreChofer + "', '" + marcaAuto + "','" + nombreRuta + "') ";
+            comando.CommandText = "INSERT INTO reservaciones VALUES('" + nombreChofer + "', '" + marcaAuto + "','" + nombreRuta + "') ";
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
 
         //eliminacion de las reservacioens de sus respectivas tablas.
-        public void eliminarChofer(string nombre) {
+        public void eliminarChofer(string nombre)
+        {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "DELETE FROM choferes WHERE nombreChoferes = '"+nombre+"' ";
+            comando.CommandText = "DELETE FROM choferes WHERE nombreChoferes = '" + nombre + "' ";
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
 
-        public void eliminarAutobus(string nombreAuto) {
+        public void eliminarAutobus(string nombreAuto)
+        {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "DELETE FROM autobuses WHERE marcaAutobus= '" + nombreAuto +"' ";
+            comando.CommandText = "DELETE FROM autobuses WHERE marcaAutobus= '" + nombreAuto + "' ";
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
 
-        public void eliminarRuta(string nombreRuta) {
+        public void eliminarRuta(string nombreRuta)
+        {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "DELETE FROM ruta WHERE nombreRura ='" + nombreRuta + "' ";
             comando.ExecuteNonQuery();

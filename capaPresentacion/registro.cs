@@ -71,25 +71,6 @@ namespace capaPresentacion
 
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            drag = true;
-            start_point = new Point(e.X, e.Y);
-        }
-
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (drag) {
-                Point P = PointToScreen(e.Location);
-                this.Location = new Point(P.X-start_point.X,P.Y-start_point.Y);
-            }
-        }
-
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
-        {
-            drag = false;
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -103,6 +84,26 @@ namespace capaPresentacion
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void registro_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+
+        private void registro_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point P = PointToScreen(e.Location);
+                this.Location = new Point(P.X - start_point.X, P.Y - start_point.Y);
+            }
+        }
+
+        private void registro_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
         }
     }
 }

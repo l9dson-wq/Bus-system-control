@@ -65,7 +65,7 @@ namespace capaPresentacion
                     else if (CPL1.datoTipoUsuario == "comun")
                     {
                         this.Hide();
-                        MR1.ShowDialog();
+                        MR1.Show();
                         limpiarText();
                         //this.Show();
                     }

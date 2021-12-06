@@ -36,19 +36,22 @@ namespace capaNegocio
             return tabla;
         }
         //RETORNANDO A LA CAPA DE PRESENTACION LOS VALORES DE MI SELECCION 
-        public DataTable MostrarReservaciones() {
+        public DataTable MostrarReservaciones()
+        {
             DataTable tabla = new DataTable();
             tabla = SLR1.mostrarReservaciones();
             return tabla;
         }
 
         //insertando las reservaciones
-        public void InsertarReservacion(string nombreChofer, string marcaAuto, string nombreRuta) {
+        public void InsertarReservacion(string nombreChofer, string marcaAuto, string nombreRuta)
+        {
             SLR1.insertarReservacion(nombreChofer, marcaAuto, nombreRuta);
         }
 
         //codigo para eliminar su respectiva seleccion de sus respectivas tablas.
-        public void EliminarDatos(string nombre, string idAuto, string idRuta) {
+        public void EliminarDatos(string nombre, string idAuto, string idRuta)
+        {
             SLR1.eliminarChofer(nombre);
             SLR1.eliminarAutobus(idAuto);
             SLR1.eliminarRuta(idRuta);

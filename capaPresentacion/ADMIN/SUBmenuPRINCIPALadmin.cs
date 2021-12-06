@@ -18,6 +18,8 @@ namespace capaPresentacion
         InsertarAutobusesADMIN IAA = new InsertarAutobusesADMIN();
         InsertarRutasADMIN IRA = new InsertarRutasADMIN();
 
+        Form1 fm1 = new Form1();
+
         //objetos para mover el formulario con un diseño = none
         Point start_point = new Point(0, 0);
         bool drag = false;
@@ -104,6 +106,27 @@ namespace capaPresentacion
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+            fm1.Show();
+        }
+
+        private void SUBmenuPRINCIPALadmin_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+
+        private void SUBmenuPRINCIPALadmin_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point P = PointToScreen(e.Location);
+                this.Location = new Point(P.X - start_point.X, P.Y - start_point.Y);
+            }
+        }
+
+        private void SUBmenuPRINCIPALadmin_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
         }
     }
 }

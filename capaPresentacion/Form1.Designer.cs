@@ -167,7 +167,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::capaPresentacion.Properties.Resources.minimizar_signo;
-            this.pictureBox3.Location = new System.Drawing.Point(330, 13);
+            this.pictureBox3.Location = new System.Drawing.Point(41, 13);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(23, 15);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -179,7 +179,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::capaPresentacion.Properties.Resources.x;
-            this.pictureBox2.Location = new System.Drawing.Point(359, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(23, 16);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

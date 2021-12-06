@@ -62,29 +62,9 @@ namespace capaPresentacion
             txtYear.Clear();
         }
 
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
-        {
-            drag = true;
-            start_point = new Point(e.X, e.Y);
-        }
-
         private void panel2_MouseHover(object sender, EventArgs e)
         {
 
-        }
-
-        private void panel2_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (drag)
-            {
-                Point P = PointToScreen(e.Location);
-                this.Location = new Point(P.X - start_point.X, P.Y - start_point.Y);
-            }
-        }
-
-        private void panel2_MouseUp(object sender, MouseEventArgs e)
-        {
-            drag = false;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -99,14 +79,27 @@ namespace capaPresentacion
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-                if (this.WindowState == FormWindowState.Normal)
-                {
-                    this.WindowState = FormWindowState.Minimized;
-                }
-                else
-                {
-                    this.WindowState = FormWindowState.Normal;
-                }
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void InsertarAutobusesADMIN_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+
+        private void InsertarAutobusesADMIN_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point P = PointToScreen(e.Location);
+                this.Location = new Point(P.X - start_point.X, P.Y - start_point.Y);
+            }
+        }
+
+        private void InsertarAutobusesADMIN_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
         }
     }
 }

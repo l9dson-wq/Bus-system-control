@@ -68,13 +68,13 @@ namespace capaPresentacion
 
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void InsertarRutasADMIN_MouseDown(object sender, MouseEventArgs e)
         {
             drag = true;
             start_point = new Point(e.X, e.Y);
         }
 
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        private void InsertarRutasADMIN_MouseMove(object sender, MouseEventArgs e)
         {
             if (drag)
             {
@@ -83,7 +83,7 @@ namespace capaPresentacion
             }
         }
 
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        private void InsertarRutasADMIN_MouseUp(object sender, MouseEventArgs e)
         {
             drag = false;
         }

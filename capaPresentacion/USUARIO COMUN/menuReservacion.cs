@@ -14,6 +14,19 @@ namespace capaPresentacion
     public partial class menuReservacion : Form
     {
         CN_reservacion CNR1 = new CN_reservacion();
+
+        //objeto de la capa logica de inicio de sesion
+        CPlogicaInicioSesion CLIS1 = new CPlogicaInicioSesion();
+
+        //objetos para mover el formulario con un diseño = none
+        Point start_point = new Point(0, 0);
+        bool drag = false;
+
+        //objeto del formulario principal
+        Form1 FM1 = new Form1();
+
+        public string datoReservante = null;
+
         public menuReservacion()
         {
             InitializeComponent();
@@ -32,17 +45,18 @@ namespace capaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboChoferes.Text.Length > 0 && comboAutobuses.Text.Length > 0 && comboRuta.Text.Length > 0)
+           if (comboChoferes.Text.Length > 0 && comboAutobuses.Text.Length > 0 && comboRuta.Text.Length > 0)
             {
-                MessageBox.Show("Datos seleccionados correctamente");
                 CNR1.InsertarReservacion(comboChoferes.Text, comboAutobuses.Text, comboRuta.Text);
                 CNR1.EliminarDatos(comboChoferes.Text, comboAutobuses.Text, comboRuta.Text);
-                mostrarReservaciones();
-                limpiarComboBox();
+                //this.Close();
+                //FM1.Show();
+                MessageBox.Show("Reserva realizada con exito, vuelva a iniciar sesion para comprobar!");
             }
             else {
                 MessageBox.Show("Por favor seleccione los valores correctamente antes de continuar");
             }
+            
         }
 
         public void mostrarComboDatos() {
@@ -88,6 +102,37 @@ namespace capaPresentacion
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+            FM1.Show();
+        }
+
+        private void menuReservacion_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            start_point = new Point(e.X, e.Y);
+        }
+
+        private void menuReservacion_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point P = PointToScreen(e.Location);
+                this.Location = new Point(P.X - start_point.X, P.Y - start_point.Y);
+            }
+        }
+
+        private void menuReservacion_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Gray;
         }
     }
 }

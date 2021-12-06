@@ -77,13 +77,18 @@ namespace capaPresentacion
 
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menuPrincipalAdmin_MouseDown(object sender, MouseEventArgs e)
         {
             drag = true;
             start_point = new Point(e.X, e.Y);
         }
 
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        private void menuPrincipalAdmin_MouseMove(object sender, MouseEventArgs e)
         {
             if (drag)
             {
@@ -92,14 +97,9 @@ namespace capaPresentacion
             }
         }
 
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        private void menuPrincipalAdmin_MouseUp(object sender, MouseEventArgs e)
         {
             drag = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
