@@ -6,3 +6,7 @@ Sistema de control de autobuses con la arquitectura en capas
 Enlace al video explicativo del proyecto final:
 https://youtu.be/byMOboVnS5U
 
+De usar la aplicacion localmente tiene que hacer devidos cambios al proyecto:
+
+- Reemplazar los datos correspondiente en la conexion SQL.
+- Crear la base de datos con el query suministrado.
