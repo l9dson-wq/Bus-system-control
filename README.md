@@ -1,4 +1,5 @@
-# Bus-system-control
+# Bus-system-control - layered programming
+
 Sistema de control de autobuses con la arquitectura en capas
 
 # Enlace al video explicativo del proyecto final:
